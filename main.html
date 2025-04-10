@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аудио + Окна + Telegram</title>
+  <style>
+
+    body {
+      margin: 0;
+      background: #fff;
+      overflow: hidden;
+    }
+    
+    audio {
+      display: none;
+    }
+    
+    .popupFrame {
+      position: fixed;
+      border: 2px solid #000;
+     
+      width: 400px;
+      height: 300px;
+      z-index: 1000;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <audio id="audioPlayer" src="boom.m4a" loop preload="auto"></audio>
+  
+  <script>
+    l
+    function getRandom(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    l
+    function createPopups() {
+      const popupCount = 10;
+      const iframeWidth = 400;
+      const iframeHeight = 300;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      
+      for (let i = 0; i < popupCount; i++) {
+        const iframe = document.createElement("iframe");
+        iframe.className = "popupFrame";
+        iframe.src = "hehe.html"; 
+        
+        const maxLeft = Math.max(windowWidth - iframeWidth, 0);
+        const maxTop = Math.max(windowHeight - iframeHeight, 0);
+        iframe.style.left = getRandom(0, maxLeft) + "px";
+        iframe.style.top = getRandom(0, maxTop) + "px";
+        document.body.appendChild(iframe);
+      }
+    }
+    
+    
+    function openTelegramLink() {
+      const telegramLink = "https://t.me/Halfjllku";
+      window.open(telegramLink, "_blank");
+    }
+
+    
+    let started = false;
+    
+    
+    function start() {
+      if (started) return;
+      started = true;
+      
+      
+      const audio = document.getElementById("audioPlayer");
+      audio.play().catch(err => console.error("Ошибка воспроизведения аудио:", err));
+      
+     
+      
+      
+      
+      setTimeout(createPopups, 1000);
+      const openInterval = setInterval(openTelegramLink, 1000);
+    }
+    
+
+    document.body.addEventListener("click", start);
+  </script>
+</body>
+</html>
