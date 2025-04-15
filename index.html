@@ -342,12 +342,15 @@
 
     setTimeout(() => {
       
-      for (let i = 0; i < 10; i++) {
+      function openNonOverlappingWindows(numWindows) {
+  for (let i = 0; i < 10; i++) {
     setTimeout(() => {
+      
       openIframes(1);
+    }, i * 500); 
+  }
 
-    }, 1000);
-     
+
 
   
     }, 1000);
