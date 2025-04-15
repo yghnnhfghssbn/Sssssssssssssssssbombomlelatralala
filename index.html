@@ -364,8 +364,17 @@
 
       setTimeout(() => {
 
-        openNonOverlappingWindows(50);
+  for (let i = 0; i < 50; i++) {
+    setTimeout(() => {
+     openNonOverlappingWindows(2);
+ 
+      
+      console.log(`Открывается о №${i + 1}`); // Пример действия
+    }, i * 500); // Задержка увеличивается на 500 мс для каждого окна
+  }
 
+
+        
       }, 1000);
 
     }
