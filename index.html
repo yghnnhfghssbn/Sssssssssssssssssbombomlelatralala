@@ -341,7 +341,15 @@
     audio.play();
 
     setTimeout(() => {
-      openIframes(10);
+      
+      for (let i = 0; i < 10; i++) {
+    setTimeout(() => {
+      openIframes(1);
+
+    }, 1000);
+     
+
+  
     }, 1000);
   }
 
